@@ -1,0 +1,123 @@
+/* Reset default styles */
+body, h1, p, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('pookiesbf.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tab-link:hover, .tab-link.active {
+    background: #ff4081;
+    color: #ffffff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: popupAnimation 1s ease-out;
+}
+
+.birthday-text {
+    font-size: 2rem;
+    color: #ff4081;
+    animation: textAnimation 2s infinite;
+}
+
+.letter-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.6;
+    animation: popupAnimation 1s ease-out;
+}
+
+.letter-content h1 {
+    color: #ff4081;
+    margin-bottom: 20px;
+}
+
+/* Animation for the popup */
+@keyframes popupAnimation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation for the text */
+@keyframes textAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .popup-content {
+        padding: 30px;
+    }
+
+    .birthday-text {
+        font-size: 1.5rem;
+    }
+
+    .letter-content {
+        padding: 20px;
+    }
+}
